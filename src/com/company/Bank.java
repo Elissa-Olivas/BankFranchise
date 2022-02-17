@@ -5,6 +5,10 @@ public class Bank {
     private String name;
     private double cashInVault;
 
+    public Bank (String name, int cashInVault) {
+        this.name= name;
+        this.cashInVault = cashInVault;
+    }
     // "set" method for name
     public void setName(String nameOfBank) {
         name = nameOfBank;
@@ -26,15 +30,18 @@ public class Bank {
     // method for deposit
     public void deposit (double amtOfDeposit) {
         cashInVault += amtOfDeposit;
-        System.out.println("Branch: " + name + ", Amount deposited: " + amtOfDeposit + "\n" +
-                "Total amount in bank after deposit: " + cashInVault);
+        System.out.println("Branch: " + name + ", Amount deposited: $" + amtOfDeposit + "\n" +
+                "Total amount in bank after deposit: $" + cashInVault);
     }
 
 
     // method for withdrawl
     public void withdrawl (double amtOfWithdrawl) {
         cashInVault -= amtOfWithdrawl;
-        System.out.println("Branch: " + name + ", Amount withdrawn: " + amtOfWithdrawl + "\n" +
-                "Total amount in bank after withdrawl: " + cashInVault);
+        System.out.println("Branch: " + name + ", Amount withdrawn: $" + amtOfWithdrawl + "\n" +
+                "Total amount in bank after withdrawl: $" + cashInVault);
+    }
+    public void describeBank () {
+        System.out.println(getName() + " has a starting amount of $" + getCashInVault() + " in the vault.");
     }
 }
